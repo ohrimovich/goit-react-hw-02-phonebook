@@ -1,0 +1,14 @@
+.button {
+  margin-left: 15px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.number {
+  margin-left: 5px;
+}
