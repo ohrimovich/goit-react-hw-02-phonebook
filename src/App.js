@@ -36,11 +36,13 @@ class App extends Component {
   }
 
   getFilteredContactList = () => {
-    const {contacts , filter} = this.state
-        return contacts.filter(
+    const { contacts, filter } = this.state
+            return contacts.filter(
       contact => contact.name.toLocaleLowerCase()
         .includes(filter.toLocaleLowerCase())
     )
+      
+  
   }
 
   deleteContact = (id) => {
@@ -54,7 +56,9 @@ class App extends Component {
 
   componentDidMount() {
     const parsedContacts = JSON.parse(localStorage.getItem('contacts'))
-    this.setState({contacts: parsedContacts})
+    if (parsedContacts) {
+      this.setState({ contacts: parsedContacts })
+    }
   }
 
   componentDidUpdate(prevProps,prevState ) {
